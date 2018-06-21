@@ -1,0 +1,101 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Exam Result Review</ion-title>
+    <ion-buttons end>
+      <button ion-button color="light" (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-result">  
+    <ion-card id="card1">
+      <div class="card-header">
+          <ion-row >
+            <ion-col width-100>
+              <span>Your Score: {{score}}%</span>
+            </ion-col>
+          </ion-row>
+      </div>
+      <ion-card-header class="storeCardHeader">
+          <canvas id="myChart2" style="position: relative; height:40vh; width:100vw"></canvas>
+          <base-chart class="chart"
+                      [datasets]="ChartData"
+                      [labels]="ChartLabels"
+                      [options]="ChartOptions"
+                      [colors]="ChartColours"
+                      [legend]="ChartLegend"
+                      [chartType]="ChartType">
+          </base-chart>          
+      </ion-card-header>
+
+      <div class="card-header">
+        <ion-row >
+          <ion-col width-100>
+            <span>Results from: {{title}}</span>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-card>
+
+    <ion-list *ngFor="let rs of resultData; let i = index">
+        <ion-card class="adv-map" id="card2" [ngClass]="{cardvalid: rs.Status == 1, cardinvalid: rs.Status == -1, cardnoanswer: rs.Status == 0}">
+            <div class="card-header">
+              <ion-row >
+                <ion-col width-35>
+                  <span small >Question: {{i+1}}/{{qty}}</span>
+                </ion-col>
+                <ion-col width-25>
+                  <span>QId: #{{rs.Id}}</span>
+                </ion-col>
+              </ion-row>
+                <div *ngIf="rs.Image">
+                  <p [innerHTML]="rs.Image"></p>
+                </div>
+        
+                <ion-card-content secondary>
+                    <h2 [innerHTML]="rs.Question"></h2>
+                </ion-card-content>
+            </div>
+            <div *ngIf="rs.uAnswer !=''">
+              <h2 padding>Answered: {{rs.uAnswer}}</h2>
+            </div>
+              <ion-list id="options" class="options">
+                  <ion-item text-wrap class="item-text-wrap" [ngClass]="{normal: rs._f['A']==0, correct: rs._f['A']==1, selected: rs._f['A']==2, invalid: rs._f['A']<0}" id="A" *ngIf="rs.A !==''">
+                      <h2>A</h2>
+                      <p [innerHTML]="rs.A"></p>
+                      <ion-icon *ngIf="rs._f['A']==1" name="checkmark" item-right color=dark></ion-icon>
+                      <ion-icon *ngIf="rs._f['A']<0" name="close" item-right color=dark></ion-icon>
+                  </ion-item>
+                  <ion-item text-wrap class="item-text-wrap" [ngClass]="{normal: rs._f['B']==0, correct: rs._f['B']==1, selected: rs._f['B']==2, invalid: rs._f['B']<0}" id="B" *ngIf="rs.B !==''">
+                      <h2>B</h2>
+                      <p [innerHTML]="rs.B"></p>
+                      <ion-icon *ngIf="rs._f['B']==1" name="checkmark" item-right color=dark></ion-icon>
+                      <ion-icon *ngIf="rs._f['B']<0" name="close" item-right color=dark></ion-icon>
+                  </ion-item>
+                  <ion-item text-wrap class="item-text-wrap" [ngClass]="{normal: rs._f['C']==0, correct: rs._f['C']==1, selected: rs._f['C']==2, invalid: rs._f['C']<0}" id="C" *ngIf="rs.C !==''">
+                      <h2>C</h2>
+                      <p [innerHTML]="rs.C"></p>
+                      <ion-icon *ngIf="rs._f['C']==1" name="checkmark" item-right color=dark></ion-icon>
+                      <ion-icon *ngIf="rs._f['C']<0" name="close" item-right color=dark></ion-icon>
+                  </ion-item>
+                  <ion-item text-wrap class="item-text-wrap" [ngClass]="{normal: rs._f['D']==0, correct: rs._f['D']==1, selected: rs._f['D']==2, invalid: rs._f['D']<0}" id="D" *ngIf="rs.D !==''">
+                      <h2>D</h2>
+                      <p [innerHTML]="rs.D"></p>
+                      <ion-icon *ngIf="rs._f['D']==1" name="checkmark" item-right color=dark></ion-icon>
+                      <ion-icon *ngIf="rs._f['D']<0" name="close" item-right color=dark></ion-icon>
+                  </ion-item>
+                  <ion-item text-wrap class="item-text-wrap" [ngClass]="{normal: rs._f['E']==0, correct: rs._f['E']==1, selected: rs._f['E']==2, invalid: rs._f['E']<0}" id="E" *ngIf="rs.D !==''">
+                      <h2>E</h2>
+                      <p [innerHTML]="rs.E"></p>
+                      <ion-icon *ngIf="rs._f['E']==1" name="checkmark" item-right color=dark></ion-icon>
+                      <ion-icon *ngIf="rs._f['E']<0" name="close" item-right color=dark></ion-icon>
+                  </ion-item>
+                  <div class="card-footer">
+                    <p [innerHTML]="rs.Explanation"></p>
+                  </div>
+              </ion-list>
+        </ion-card>
+    </ion-list>
+</ion-content>
+   

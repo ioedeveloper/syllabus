@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>PIN Request Form</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ion-card>
+            <ion-card-content>
+                <h2>Enter your information</h2>
+                <ion-item>
+                  <ion-label floating>Email:</ion-label>
+                  <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label floating>Telephone:</ion-label>
+                  <ion-input type="tel" [(ngModel)]="telephone" name="telephone" required></ion-input>
+                </ion-item>
+            </ion-card-content>
+
+        <div class="card-footer">
+              <button full (click)="dismiss(email, telephone)">
+                  Submit PIN Request
+              </button>
+        </div>
+        </ion-card>
+    </div>
+</ion-content>

@@ -1,7 +1,19 @@
 {
-  "name": "syllabus",
-  "app_id": "",
+  "name": "Quizionic3",
+  "app_id": "com.studiomob.quizionic3",
   "type": "ionic-angular",
+  "proxies": [{
+    "path": "/updateDB",
+    "proxyUrl": "http://www.studiomob.ca/pin/requestUpdate.php"
+  },
+  {
+    "path": "/requestPIN",
+    "proxyUrl": "http://www.studiomob.ca/pin/requestPIN.php"
+  },
+  {
+    "path": "/updateProgress",
+    "proxyUrl": "http://www.studiomob.ca/pin/reportProgress.php"
+  }],
   "integrations": {
     "cordova": {}
   }

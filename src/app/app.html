@@ -1,1 +1,37 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu #menu [content]="content" side="left" id="menu">
+<ion-header id="headerM">
+    <ion-toolbar id="toolbarT">
+      <ion-title *ngIf="_Paid==0">Free version</ion-title>
+      <ion-title *ngIf="_Paid==1">Full version</ion-title>
+    </ion-toolbar>
+      <div class="ava">
+      <ion-item class="item-avatar" item-left *ngIf="user!=''">
+        <ion-avatar item-left>
+            <img spinner-on-load src="{{picture}}">
+        </ion-avatar>
+        <h2>Hi {{user}}</h2>
+        <p>{{email}}</p>
+    </ion-item>
+  </div>
+</ion-header>
+
+  <ion-content>
+    <ion-list *ngFor="let p of pages" >
+        <button menuClose ion-item *ngIf="p.paid<=_Paid && p.title!='Store' || p.title=='Store' && store"(click)="openPage(p)">
+          <ion-icon item-left name="{{p.icon}}"></ion-icon>
+          {{p.title}} 
+        </button>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer class="ftitle">
+          <button menuClose ion-button icon-only (click)="openDeveloperPage()">
+            <ion-icon name="build"></ion-icon>
+          </button>
+          <ion-title>{{appVersion}}</ion-title>
+  </ion-footer>
+</ion-menu>
+
+<ion-view>
+  <ion-nav id="nav" [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>
+</ion-view>

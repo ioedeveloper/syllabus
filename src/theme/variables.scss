@@ -1,16 +1,6 @@
 // Ionic Variables and Theming. For more info, please see:
-// http://ionicframework.com/docs/theming/
-
-// Font path is used to include ionicons,
-// roboto, and noto sans fonts
+// http://ionicframework.com/docs/v2/theming/
 $font-path: "../assets/fonts";
-
-
-// The app direction is used to include
-// rtl styles in your app. For more info, please see:
-// http://ionicframework.com/docs/theming/rtl-support/
-$app-direction: ltr;
-
 
 @import "ionic.globals";
 
@@ -20,9 +10,10 @@ $app-direction: ltr;
 // To customize the look and feel of this app, you can override
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
-// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-
+$text-color:        #000;
+$background-color:  #fff;
 
 
 // Named Color Variables
@@ -33,13 +24,28 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+// New color schema for Quizionic3
 $colors: (
-  primary:    #488aff,
+  primary:    #1E4D4E,
+  secondary:  #5EB377,
+  danger:     #D46969,
+  light:      #D3E6D6,
+  dark:       #031728,
+  favorite:   #80B3A7,
+  neutral:    #7f7f7f
+);
+
+// Color schema for Quizionic2
+/*$colors: (
+  primary:    #387ef5,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
-);
+  dark:       #222,
+  favorite:   #fecac8,
+  neutral:    #7f7f7f
+);*/
+
 
 
 // App iOS Variables
@@ -76,9 +82,9 @@ $colors: (
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
-// http://ionicframework.com/docs/ionicons/
+// http://ionicframework.com/docs/v2/ionicons/
 
-@import "ionic.ionicons";
+@import "ionicons";
 
 
 // Fonts

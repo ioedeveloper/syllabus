@@ -1,4 +1,4 @@
-// http://ionicframework.com/docs/theming/
+// http://ionicframework.com/docs/v2/theming/
 
 
 // App Global Sass
@@ -14,3 +14,24 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-header{
+  background: #23a543 !important;
+}
+ion-navbar{
+  background: #23a543 !important;
+}
+.toolbar-background.toolbar-background-md{
+  background: #23a543 !important;
+}
+.toolbar-title.toolbar-title-md{
+  color: #fff !important;
+}
+.back-button-icon.icon.icon-md.back-button-icon-md.ion-md-arrow-back{
+  color:#fff;
+}
+.button-inner > .icon.icon-md.ion-md-add{
+  color:#fff;
+}
+.tabs-md.tab-button[aria-selected=true].tab-button-icon{
+  color:#23a543;
+}
