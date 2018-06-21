@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Developer Assistant</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="developer">
+  <ion-card>
+      <ion-card-header class="storeCardHeader">
+        <ion-icon name="build"></ion-icon>
+      </ion-card-header>
+
+      <div class="card-header">
+        <ion-row >
+          <ion-col width-100>
+            <span>Available Config</span>
+          </ion-col>
+        </ion-row>
+      </div>
+    <ion-list>
+      <!--on-changes-->
+        <ion-item>
+          <ion-label>Questions lock > </ion-label>
+          <ion-input type="number" [(ngModel)]="_qId" (input)="update($event.target.value, 'qId')"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Categories lock > </ion-label>
+          <ion-input type="number" [(ngModel)]="_cId" (input)="update($event.target.value, 'cId')"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Exams lock > </ion-label>
+          <ion-input type="number" [(ngModel)]="_eId" (input)="update($event.target.value, 'eId')"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Login Page?</ion-label>
+          <ion-checkbox primary [(ngModel)]="_login" (ionChange)="logEvent($event,'login')"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Admob Visible?</ion-label>
+          <ion-checkbox primary [(ngModel)]="_admob" (ionChange)="logEvent($event,'admob')"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox primary [(ngModel)]="_expla" (ionChange)="logEvent($event,'explanation')"></ion-checkbox>
+          <ion-label>Allow Explanations?</ion-label>
+        </ion-item>
+        <ion-item *ngIf="_expla">
+          <ion-label >Set Explanations: </ion-label>
+          <ion-input type="number" [(ngModel)]="_quantity" (input)="update($event.target.value, 'explanationq')"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox primary [(ngModel)]="_fullv" (ionChange)="logEvent($event,'fullversion')"></ion-checkbox>
+          <ion-label>Full Version</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox primary [(ngModel)]="_hlra" (ionChange)="logEvent($event,'highlight')"></ion-checkbox>
+          <ion-label>Highlight Right Answer?</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox primary [(ngModel)]="_store" (ionChange)="logEvent($event,'store')"></ion-checkbox>
+          <ion-label>Enable Store ?</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox primary [(ngModel)]="_autoQJump" (ionChange)="logEvent($event,'autoQuestionJump')"></ion-checkbox>
+          <ion-label>Auto Question Jump ?</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Navigation Buttons?</ion-label>
+          <ion-checkbox primary [(ngModel)]="_npbutton" (ionChange)="logEvent($event,'npButtons')"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox primary [(ngModel)]="_previousBtn" (ionChange)="logEvent($event,'previousBtn')"></ion-checkbox>
+          <ion-label>Navigation Previous Btn ?</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox primary [(ngModel)]="_resultPage" (ionChange)="logEvent($event,'resultPage')"></ion-checkbox>
+          <ion-label>Result Page ?</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox primary [(ngModel)]="_MABtnUp" (ionChange)="logEvent($event,'MABtnUp')"></ion-checkbox>
+          <ion-label>Multi Answer Validation Btn Up?</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox primary [(ngModel)]="_actionSheet" (ionChange)="logEvent($event,'actionSheet')"></ion-checkbox>
+          <ion-label>ActionSheet for Explanation?</ion-label>
+        </ion-item>
+        <ion-item *ngIf="dbversion >= '3.3'">
+            <ion-checkbox primary [(ngModel)]="_stats" (ionChange)="logEvent($event,'statsOnExam')"></ion-checkbox>
+            <ion-label>Statistic on Exam?</ion-label>
+          </ion-item>
+        <ion-item>
+          <ion-checkbox primary [(ngModel)]="_shuffle" (ionChange)="logEvent($event,'shuffle')"></ion-checkbox>
+          <ion-label>Shuffle Answers?</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox primary [(ngModel)]="onlineProgress" (ionChange)="logEvent($event,'onlineProgress')"></ion-checkbox>
+          <ion-label>On-line Progress?</ion-label>
+        </ion-item>
+        <ion-item *ngIf="onlineProgress">
+          <ion-label >Submit Progress Date: </ion-label>
+          <ion-input type="date" [(ngModel)]="sbPrDate" (input)="update($event.target.value, 'submitProgressDate')"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label >DB Synch Date: </ion-label>
+          <ion-input type="date" [(ngModel)]="DBSynchD" (input)="update($event.target.value, 'DBSynchDate')"></ion-input>
+        </ion-item>
+      <!--/on-changes-->
+    </ion-list>
+  </ion-card>
+</ion-content>

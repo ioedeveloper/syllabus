@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Exams</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="exam-list">
+  <ion-card>
+      <ion-card-header class="storeCardHeader">
+        <ion-icon name="school"></ion-icon>
+      </ion-card-header>
+
+      <div class="card-header">
+        <ion-row >
+          <ion-col width-100>
+            <span>Available Exams</span>
+          </ion-col>
+        </ion-row>
+      </div>
+    <ion-list>
+      <!--on-changes-->
+        <ion-item-sliding *ngFor="let exam of exams" >
+            <button ion-item (click)="itemTapped($event, exam)">
+                <ion-icon item-left name="{{exam.Icon}}" >
+                </ion-icon>
+                <h2>{{exam.ExamTitle}}</h2>
+                <p>Questions: {{exam.Qty}}, Time: {{exam.Duration}}, MinScore: {{exam.MinScore}}%</p>
+            </button>
+        </ion-item-sliding>
+      <!--/on-changes-->
+    </ion-list>
+  </ion-card>
+</ion-content>

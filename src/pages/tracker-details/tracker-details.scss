@@ -1,0 +1,73 @@
+tracker-details {
+
+  div.scroll-content {
+    background-color: #435A57;
+    color: map-get($colors, light);
+    font-weight: normal;
+  }
+
+  ion-note {
+    color: map-get($colors, light);
+    font-weight: normal;
+  }
+
+  ion-list {
+    margin: 5px;
+    width: 100%;
+  }
+
+  ion-list .item {
+    background-color: #435A57;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: map-get($colors, light);
+        
+  }
+  
+  ion-list .item h2 {
+    color: map-get($colors, light);
+  }
+
+  ion-list .item p {
+    color: map-get($colors, light) !important;
+  }
+
+  
+  ion-list ion-item div.item-inner {
+    border-bottom-width: 0px !important;
+    border-bottom-style: solid;
+    border-bottom-color: map-get($colors, light);
+  }
+}
+
+
+.base-chart, .chart {
+display: block;
+height: 100%;
+margin: 15px;
+color: map-get($colors, light);
+//background-color: #fff;
+}
+
+.name {
+    margin: 0;
+}
+
+.handle {
+    margin: 0;
+}
+
+.status {
+    white-space: normal;
+    color: #000;
+    margin-top: 50px;
+}
+
+.item {
+    align-items: baseline;
+}
+
+.button-container {
+    align-self: flex-end;
+    text-align: right;
+}

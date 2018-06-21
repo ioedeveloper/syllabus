@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Store Products</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="storelist">
+
+        <ion-card>
+            <ion-card-header class="storeCardHeader">
+              <ion-icon name="cart"></ion-icon>
+            </ion-card-header>
+            <div class="card-header">
+              <ion-row >
+                <ion-col width-100>
+                  <span>Available Explanations/Tips: {{explanationQ}}</span>
+                </ion-col>
+              </ion-row>
+            </div>
+
+
+            <ion-card-content *ngIf="storeready" (click)="restoreTapped()">
+                <h2>Restore</h2>
+                <h3>Restore all purchases</h3>
+            </ion-card-content>
+            <div class="card-header">
+              <ion-row >
+                <ion-col width-100>
+                  <span>Available Products for Purchase</span>
+                </ion-col>
+              </ion-row>
+            </div>
+            <ion-list>
+              <button ion-item *ngFor="let product of products" (click)="itemTapped(product)">
+                  <h2>{{product.title}}</h2>
+                  <h3>Price: {{product.price}}</h3>
+                  <h4>{{product.description}}</h4>
+              </button>
+            </ion-list>
+
+        </ion-card>
+
+</ion-content>

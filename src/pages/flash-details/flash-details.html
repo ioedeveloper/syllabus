@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>{{title}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding class="welcome">
+      <flash-card>
+              <div class="flash-card-front">
+                <p *ngIf="frontImg != null" [innerHTML]="frontImg"></p>
+                <p [innerHTML]="front"></p>
+              </div>
+              <div class="flash-card-back">
+                <p *ngIf="backImg != null" [innerHTML]="backImg"></p>
+                <p [innerHTML]="back"></p>
+              </div>
+      </flash-card>
+  </ion-content>
+  <ion-footer >
+      <ion-toolbar color="primary">
+        <ion-buttons *ngIf="index>0" start>
+          <button ion-button icon-only (click)="previousFlashCard()">
+            <ion-icon name="arrow-dropleft-circle"></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-title>Navigation</ion-title>
+        <ion-buttons *ngIf="index+1 < qty" end>  
+            <button ion-button icon-only (click)="nextFlashCard()">
+                <ion-icon name="arrow-dropright-circle"></ion-icon>
+            </button>
+        </ion-buttons>  
+      </ion-toolbar>
+    </ion-footer>
+  

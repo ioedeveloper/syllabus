@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>DB Update Request</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ion-card>
+            <ion-card-content>
+                <h2>Update DB process</h2>
+                <ion-item>
+                  <textarea rows = "12" cols = "60" [innerText]>{{status}}</textarea>
+                </ion-item>
+            </ion-card-content>
+
+        <div class="card-footer">
+              <button full (click)="updateDB()">
+                  Update DB Now
+              </button>
+        </div>
+        </ion-card>
+    </div>
+</ion-content>

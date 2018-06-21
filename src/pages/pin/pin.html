@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>PIN Management</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="productDetail">
+    <div>
+        <ion-card>
+            <ion-card-content>
+                <h2>Unlock Full Version ?</h2>
+                <h1></h1>
+                <p>Track your progress</p>
+                <p>Block Ads</p>
+            </ion-card-content>
+
+        <div class="card-footer">
+              <button full (click)="requestPIN()">
+                  Request a PIN
+              </button>
+        </div>
+        </ion-card>
+        <ion-card>
+            <ion-card-content>
+                <h2>Insert PIN (if you've one)</h2>
+                <ion-item>
+                  <ion-label floating>PIN:</ion-label>
+                  <ion-input type="number" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="new_pin" name="new_pin" required></ion-input>
+                </ion-item>
+            </ion-card-content>
+
+        <div class="card-footer">
+              <button full (click)="enterPIN(new_pin)">
+                  Validate PIN
+              </button>
+        </div>
+        </ion-card>
+    </div>
+</ion-content>

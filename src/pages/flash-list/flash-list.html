@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>FlashCards</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="exam-list">
+    <ion-card>
+        <ion-card-header class="storeCardHeader">
+          <ion-icon name="albums"></ion-icon>
+        </ion-card-header>
+  
+        <div class="card-header">
+          <ion-row >
+            <ion-col width-100>
+              <span>FlashCards Categories</span>
+            </ion-col>
+          </ion-row>
+        </div>
+      <ion-list>
+        <!--on-changes-->
+          <ion-item-sliding *ngFor="let list of fclist" >
+              <button ion-item (click)="itemTapped($event, list)">
+                  <h2 *ngIf="dbversion < 3.3">{{list.ExamTitle}}</h2>
+                  <h2 *ngIf="dbversion >= 3.3">{{list.Title}}</h2>
+                  <!--p>Questions: {{exam.Qty}}, Time: {{exam.Duration}}, MinScore: {{exam.MinScore}}%</p-->
+              </button>
+          </ion-item-sliding>
+        <!--/on-changes-->
+      </ion-list>
+    </ion-card>
+  </ion-content>

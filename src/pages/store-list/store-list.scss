@@ -1,0 +1,66 @@
+.storelist {
+
+  div.scroll-content {
+    font-weight: light;
+    background-image: url('../assets/img/background.jpg');
+    background-size: cover;
+  }
+
+  ion-note {
+    color: map-get($colors, primary);
+    font-weight: normal;
+  }
+
+  ion-card {
+    border-radius: 12px !important;
+  }
+
+  .storeCardHeader {
+    font-size: 15rem;
+    color: map-get($colors, primary);
+    background-color: map-get($colors,favorite);
+    text-align: center;
+  }
+
+  ion-card div.card-header  {
+    background-color: map-get($colors,primary);
+    color: map-get($colors,light);
+    font-size: 1em !important;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  ion-item-sliding .item {
+    //background-color: map-get($colors, favorite);
+    color: map-get($colors, dark);
+  }
+
+  ion-item-sliding .item p {
+    color: map-get($colors, primary) !important;
+  }
+
+  ion-list .item {
+    border-bottom: none;
+    border-bottom-style: solid;
+    border-bottom-width: 1px !important;
+    border-bottom-color: map-get($colors, primary) !important;
+    background-color: map-get($colors,light) !important;
+    color: map-get($colors, dark);
+  }
+
+  ion-list .item .item-inner {
+    border-bottom: 1px !important;
+    border-bottom-width: 1px !important;
+    border-bottom-style: solid;
+    border-bottom-color: map-get($colors, primary) !important;
+  }
+}
+
+.item {
+    align-items: baseline;
+}
+
+.button-container {
+    align-self: flex-end;
+    text-align: right;
+}

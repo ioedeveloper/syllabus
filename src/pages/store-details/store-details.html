@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Store {{condition}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="productDetail">
+    <div>
+        <ion-card *ngIf="condition=='purchase'">
+            <ion-card-content>
+                <!--<img src="{{product.picture}}"/>-->
+                <h2>Do you want to purchase ?</h2>
+                <h1>{{product.title}}</h1>
+                <p>Price: {{product.price}}</p>
+                <p>{{product.description}}</p>
+            </ion-card-content>
+
+        <div class="card-footer">
+              <button full (click)="purchaseTapped(product)">
+                  Click here to buy it
+              </button>
+        </div>
+        </ion-card>
+        <ion-card *ngIf="condition=='restore'">
+            <ion-card-content>
+                <!--<img src="{{product.picture}}"/>-->
+                <h2>Do you want to restore</h2>
+                <h1>purchased products?</h1>
+                <p>non-consumable only</p>
+            </ion-card-content>
+
+        <div class="card-footer">
+              <button full (click)="restoreTapped(product)">
+                  Click here to restore
+              </button>
+        </div>
+        </ion-card>
+    </div>
+</ion-content>
