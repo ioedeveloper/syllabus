@@ -113,7 +113,7 @@
       </button>
     </ion-buttons>
     <ion-title *ngIf="!multiAnswer">Navigation</ion-title>
-    <ion-title *ngIf="multiAnswer && !_MABtnUp" (click)="validateAnswer()">Validate Answer</ion-title>
+    <ion-title *ngIf="multiAnswer && !_MABtnUp" (click)="validateAnswer()">Next</ion-title>
     <ion-buttons *ngIf="npb && indexQ < qty" end>  
         <button ion-button icon-only (click)="nextQuestion()">
             <ion-icon name="arrow-dropright-circle"></ion-icon>
