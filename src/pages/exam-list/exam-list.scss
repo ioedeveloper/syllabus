@@ -7,7 +7,7 @@ exam-list {
   }
 
   ion-card {
-    border-radius: 12px !important;
+    border-radius: 2px !important;
   }
 
   .storeCardHeader {
@@ -62,7 +62,84 @@ exam-list {
   img {
     margin-bottom: 18px;
   }
+  .bar-button-menutoggle-md{
+    color:#fff !important;
+  }
+  .exam-list .scroll-content ion-card.card div.card-header{
+    background: #fff !important;
+    color:#23a543;
+  }
+  .head-msg > h2{
+    color:#23a543;
+  }
+  .head-msg > p{
+    font-size: 0.8em;
+    font-family: cursive;
+  }
+  ion-header-bar{
+    //background:#23a543;
+    display: block;
+  }
 
+  ion-row ion-col ion-card ion-header-bar{
+    background-color: #23a543 !important;
+  }
 
+  ion-row ion-col ion-card ion-header-bar h3{
+    color:rgba(255, 255, 255, 0.7)!important;
+  }
 
+  ion-row ion-col ion-card ion-icon{
+    color:#4a3984;
+    font-size: 5em;
+  }
+
+  ion-row ion-col ion-card{
+    text-align: center;
+  }
+  
+  .card-subtitle{
+    padding:5px;
+    font-family: cursive;
+    font-size: 1em;
+    color:gray;
+  }
+  
+  header > h5{
+    text-align: center;
+    color:grey;
+  }
+  
+  header > p{
+    margin:0;
+    text-align: center;
+    color:grey;
+  }
+  
+  .toolbar-md-primary .toolbar-title-md{
+    color:#fff !important;
+  }
+  
+  .toolbar-md-primary .bar-button-default-md{
+    color:#fff !important;
+  }
+  .exam-col{
+    height:120px !important;
+    padding:0;
+    margin:0;
+    margin-bottom:10px;
+  }
+  .exam-card{
+    height:100% !important; 
+    display: block;
+  }
+  .card-md h3, .card-md h4, .card-md h5, .card-md h6{
+    padding:5px;
+  }
+  ion-card img {
+    width:60% !important;
+    height:60% !important;
+    margin-left:20% !important;
+    margin-top:5% !important;
+}
 }
