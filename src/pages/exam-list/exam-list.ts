@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {ExamDetailsPage} from '../exam-details/exam-details';
+import {ExamModePage} from '../exam-mode/exam-mode';
 import {DbService} from '../../providers/db-service';
 
 
@@ -34,7 +34,7 @@ export class ExamListPage {
     }
 
     itemTapped(event, exam) {
-        this.nav.push(ExamDetailsPage, {
+        this.nav.push(ExamModePage, {
             exam: exam,
             source: this.source,
             user: this.user,

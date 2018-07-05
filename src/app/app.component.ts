@@ -223,6 +223,15 @@ export class MyApp {
       this.events.subscribe('store',(val) => this.store = val);
       this.events.subscribe('loggedIn',(val) =>this.loadProfile(val));
 
+      this.dbService.init();
+      this.dbService.getProperty('login').then((data)=>{
+        if(data === "true"){
+          this.rootPage = ExamListPage;
+        }else{
+          this.rootPage = WelcomePage;
+        }
+      });
+
     }
 
     loadProfile(val){

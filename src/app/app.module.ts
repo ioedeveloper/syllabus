@@ -10,6 +10,7 @@ import { ActivationPage } from '../pages/activation/activation';
 import { DeveloperPage } from '../pages/developer/developer';
 import { ExamListPage } from '../pages/exam-list/exam-list';
 import { ExamDetailsPage } from '../pages/exam-details/exam-details';
+import { ExamModePage } from '../pages/exam-mode/exam-mode';
 import { FlashListPage } from '../pages/flash-list/flash-list';
 import { FlashDetailsPage } from '../pages/flash-details/flash-details';
 import { TrackerListPage } from '../pages/tracker-list/tracker-list';
@@ -32,6 +33,7 @@ import { AdMobFree } from '@ionic-native/admob-free';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { FlashCardComponent } from '../components/flash-card/flash-card';
 import { User, Api } from '../providers'; 
+import { ExamSetupPage } from '../pages/exam-setup/exam-setup';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { User, Api } from '../providers';
     DeveloperPage,
     ExamListPage,
     ExamDetailsPage,
+    ExamModePage,
+    ExamSetupPage,
     FlashDetailsPage,
     FlashListPage,
     StoreDetailPage,
@@ -67,9 +71,11 @@ import { User, Api } from '../providers';
     WelcomePage,
     DeveloperPage,
     ExamDetailsPage,
+    ExamModePage,
     StoreDetailPage,
     TrackerExamDetailPage,
     ExamListPage,
+    ExamSetupPage,
     FlashDetailsPage,
     FlashListPage,
     TrackerListPage,
