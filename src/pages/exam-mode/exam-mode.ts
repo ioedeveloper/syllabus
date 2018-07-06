@@ -46,6 +46,7 @@ itemTapped(event, mode) {
         adId: this.adId,
         mode: mode
     });
+    this.navCtrl.setRoot(ExamSetupPage);
 }
 
 

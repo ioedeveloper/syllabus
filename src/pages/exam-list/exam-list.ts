@@ -23,7 +23,6 @@ export class ExamListPage {
         this.source = navParams.get('readySource');
         this.user = navParams.get('user');
         this.adId = navParams.get('adId');
-
         //console.log(source);
     }
 

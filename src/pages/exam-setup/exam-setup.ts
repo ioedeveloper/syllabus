@@ -14,8 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'exam-setup.html',
 })
 export class ExamSetupPage {
-
+  public exam = "";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.exam = this.navParams.get('exam');
   }
 
   ionViewDidLoad() {
