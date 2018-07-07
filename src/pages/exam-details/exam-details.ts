@@ -90,6 +90,8 @@ export class ExamDetailsPage {
   private qc: number;
   private qi: number;
   private dbversion: any;
+  private _mode:any;
+  public showAnswer:boolean = false;
   
   @ViewChild('cont') content: Content;
   
@@ -109,7 +111,6 @@ export class ExamDetailsPage {
       this.adId = navParams.get('adId');
       this.dbversion = navParams.get('dbVersion');
       this.examid = _exam.Id;
-      this.duration = _exam.Duration;
       this.title = _exam.ExamTitle;
       this.qty = _exam.Qty;    
       this.resultArray = new Array(this.qty);
@@ -118,7 +119,18 @@ export class ExamDetailsPage {
       this.recordProgress = _exam.Progress;
       this.nextExam = _exam.NextExam;
       this.minScore = _exam.MinScore;
-      _timed = this.duration>0? true:false;
+      this._mode = this.navParams.get("mode");
+      if(this._mode === "exam"){
+        console.log(this.qty);
+        this.duration = this.qty * 60 * 1.5;
+        _timed = true;
+        this.showAnswer = false;
+      }else{
+        _timed = false;
+        this.showAnswer = true;
+      }
+      // this.duration = _exam.Duration;
+      // _timed = this.duration>0? true:false;
       this.timed=_timed;
       this.qc = 0;
       this.qi = 0;
@@ -416,9 +428,9 @@ export class ExamDetailsPage {
       // check for multiAnswer
       if(this.multiAnswer){
         if(this.question._f[rowId]==0){
-          this.question._f[rowId] = 2;  
+          this.question._f[rowId] = this.showAnswer ? 2 : 2;  
         } else {
-          this.question._f[rowId] = 0;
+          this.question._f[rowId] = this.showAnswer ? 0 : 2;
         }
       } // only one answer 
       else if(!_click && !_examOver){
@@ -428,20 +440,20 @@ export class ExamDetailsPage {
         this.uAnswer = rowId;
         this.resultArray[this._nextID].uAnswer = this.uAnswer;
         if(this.question.Answer === rowId) {
-          this.question._f[rowId] = 1;
+          this.question._f[rowId] = this.showAnswer ? 1 : 2;
           this.resultArray[this._nextID].Status = 1;
           this.qStatus=3;
           this.scoreArrayID[this.indexQ-1]= _score;
           this.qc++;
         } else {
-          this.question._f[rowId] = -1;
+          this.question._f[rowId] = this.showAnswer ? -1 : 2;
           this.qi++;
           this.resultArray[this._nextID].Status = -1;
           this.qStatus=2;
           this.scoreArrayID[this.indexQ-1]= 0;
           console.log('_highlight ' + _highlight);
           if(_highlight) {
-            this.question._f[this.question.Answer] = 1;
+            this.question._f[this.question.Answer] = this.showAnswer ? 1 : 0;
           }
         }
         

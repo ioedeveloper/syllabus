@@ -37,7 +37,7 @@
           {{time}}
       </ion-item>
       <ion-item id="validate" *ngIf="multiAnswer && _MABtnUp">
-        <button id="valButton" full (click)="validateAnswer()"> Validate Answer</button>
+        <button id="valButton" full (click)="validateAnswer()"> Submit</button>
       </ion-item>
 
   <div *ngIf="question" class="selection" style="position: relative">
@@ -71,35 +71,35 @@
         </div>
 
       <ion-list id="options" class="options">
-          <ion-item text-wrap class="item-text-wrap" [ngClass]="{normal: question._f['A']==0, correct: question._f['A']==1, selected: question._f['A']==2, invalid: question._f['A']<0}" id="A" *ngIf="question.A !==''"(click)="clickedRow('A')">
+          <ion-item text-wrap class="item-text-wrap normal" [ngClass]="{correct: question._f['A']==1 && showAnswer, selected: question._f['A']==2, invalid: question._f['A']<0 && showAnswer}" id="A" *ngIf="question.A !==''"(click)="clickedRow('A')">
               <h2>A</h2>
               <p [innerHTML]="question.A"></p>
-              <ion-icon *ngIf="question._f['A']==1" name="checkmark" item-right color=dark></ion-icon>
-              <ion-icon *ngIf="question._f['A']<0" name="close" item-right color=dark></ion-icon>
+              <ion-icon *ngIf="question._f['A']==1 && showAnswer" name="checkmark" item-right color=dark></ion-icon>
+              <ion-icon *ngIf="question._f['A']<0 && showAnswer" name="close" item-right color=dark></ion-icon>
           </ion-item>
-          <ion-item text-wrap class="item-text-wrap" [ngClass]="{normal: question._f['B']==0, correct: question._f['B']==1, selected: question._f['B']==2, invalid: question._f['B']<0}" id="B" *ngIf="question.B !==''"(click)="clickedRow('B')">
+          <ion-item text-wrap class="item-text-wrap normal" [ngClass]="{correct: question._f['B']==1 && showAnswer, selected: question._f['B']==2, invalid: question._f['B']<0 && showAnswer}" id="B" *ngIf="question.B !==''"(click)="clickedRow('B')">
               <h2>B</h2>
               <p [innerHTML]="question.B"></p>
-              <ion-icon *ngIf="question._f['B']==1" name="checkmark" item-right color=dark></ion-icon>
-              <ion-icon *ngIf="question._f['B']<0" name="close" item-right color=dark></ion-icon>
+              <ion-icon *ngIf="question._f['B']==1 && showAnswer" name="checkmark" item-right color=dark></ion-icon>
+              <ion-icon *ngIf="question._f['B']<0 && showAnswer" name="close" item-right color=dark></ion-icon>
           </ion-item>
-          <ion-item text-wrap class="item-text-wrap" [ngClass]="{normal: question._f['C']==0, correct: question._f['C']==1, selected: question._f['C']==2, invalid: question._f['C']<0}" id="C" *ngIf="question.C !==''" (click)="clickedRow('C')">
+          <ion-item text-wrap class="item-text-wrap normal" [ngClass]="{correct: question._f['C']==1 && showAnswer, selected: question._f['C']==2, invalid: question._f['C']<0 && showAnswer}" id="C" *ngIf="question.C !==''" (click)="clickedRow('C')">
               <h2>C</h2>
               <p [innerHTML]="question.C"></p>
-              <ion-icon *ngIf="question._f['C']==1" name="checkmark" item-right color=dark></ion-icon>
-              <ion-icon *ngIf="question._f['C']<0" name="close" item-right color=dark></ion-icon>
+              <ion-icon *ngIf="question._f['C']==1 && showAnswer" name="checkmark" item-right color=dark></ion-icon>
+              <ion-icon *ngIf="question._f['C']<0 && showAnswer" name="close" item-right color=dark></ion-icon>
           </ion-item>
-          <ion-item text-wrap class="item-text-wrap" [ngClass]="{normal: question._f['D']==0, correct: question._f['D']==1, selected: question._f['D']==2, invalid: question._f['D']<0}" id="D" *ngIf="question.D !==''" (click)="clickedRow('D')">
+          <ion-item text-wrap class="item-text-wrap normal" [ngClass]="{correct: question._f['D']==1 && showAnswer, selected: question._f['D']==2, invalid: question._f['D']<0 && showAnswer}" id="D" *ngIf="question.D !==''" (click)="clickedRow('D')">
               <h2>D</h2>
               <p [innerHTML]="question.D"></p>
-              <ion-icon *ngIf="question._f['D']==1" name="checkmark" item-right color=dark></ion-icon>
-              <ion-icon *ngIf="question._f['D']<0" name="close" item-right color=dark></ion-icon>
+              <ion-icon *ngIf="question._f['D']==1 && showAnswer" name="checkmark" item-right color=dark></ion-icon>
+              <ion-icon *ngIf="question._f['D']<0 && showAnswer" name="close" item-right color=dark></ion-icon>
           </ion-item>
-          <ion-item text-wrap class="item-text-wrap" [ngClass]="{normal: question._f['E']==0, correct: question._f['E']==1, selected: question._f['E']==2, invalid: question._f['E']<0}" id="E" *ngIf="question.E !==''" (click)="clickedRow('E')">
+          <ion-item text-wrap class="item-text-wrap normal" [ngClass]="{correct: question._f['E']==1 && showAnswer, selected: question._f['E']==2, invalid: question._f['E']<0 && showAnswer}" id="E" *ngIf="question.E !==''" (click)="clickedRow('E')">
               <h2>E</h2>
               <p [innerHTML]="question.E"></p>
-              <ion-icon *ngIf="question._f['E']==1" name="checkmark" item-right color=dark></ion-icon>
-              <ion-icon *ngIf="question._f['E']<0" name="close" item-right color=dark></ion-icon>
+              <ion-icon *ngIf="question._f['E']==1 && showAnswer" name="checkmark" item-right color=dark></ion-icon>
+              <ion-icon *ngIf="question._f['E']<0 && showAnswer" name="close" item-right color=dark></ion-icon>
           </ion-item>
       </ion-list>
     </ion-card>
@@ -113,7 +113,7 @@
       </button>
     </ion-buttons>
     <ion-title *ngIf="!multiAnswer">Navigation</ion-title>
-    <ion-title *ngIf="multiAnswer && !_MABtnUp" (click)="validateAnswer()">Validate Answer</ion-title>
+    <ion-title *ngIf="multiAnswer && !_MABtnUp" (click)="validateAnswer()">Submit</ion-title>
     <ion-buttons *ngIf="npb && indexQ < qty" end>  
         <button ion-button icon-only (click)="nextQuestion()">
             <ion-icon name="arrow-dropright-circle"></ion-icon>

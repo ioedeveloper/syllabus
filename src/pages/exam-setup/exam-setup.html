@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{exam}}</ion-title>
+    <ion-title>{{title}}</ion-title>
     <button ion-button menuToggle icon-only>
             <ion-icon name='menu'></ion-icon>
     </button>
@@ -20,8 +20,8 @@
       Instructions
     </ion-card-header>
   
-    <ion-list>
-      <button ion-item (click)="start()">
+    <ion-list (click)="start()">
+      <button ion-item>
         <ion-icon name="play" item-start></ion-icon>
         START
       </button>
